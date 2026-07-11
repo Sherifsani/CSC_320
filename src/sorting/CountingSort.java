@@ -18,7 +18,6 @@ public class CountingSort {
 
         int[] countArr = new int[max + 1];
 
-        // FIX 1: Start i at 0 so we don't miss the first element
         for (int i = 0; i < arr.length; i++) {
             countArr[arr[i]]++;
         }
@@ -29,7 +28,6 @@ public class CountingSort {
 
         int[] sortedArr = new int[arr.length];
         for (int i = arr.length - 1; i >= 0; i--) {
-            // FIX 2: Subtract 1 to get the correct 0-based index
             sortedArr[countArr[arr[i]] - 1] = arr[i];
             countArr[arr[i]]--;
         }
